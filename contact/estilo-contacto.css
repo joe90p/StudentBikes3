@@ -1,0 +1,45 @@
+*{text-indent:0px ; margin:0px ; padding:0px ; border:0px}
+a {color:#000000 ; text-decoration:none ; display: block }
+p{text-align: justify}
+h1 {font-size: 1.2em; color:black ; font-weight: bold ; text-decoration: none ; text-align: center}
+h2 {font.size: 1.1em; color:blue ; font-weight: bold ; text-decoration: none ; text-align: center}
+body {background:black;text-align: center}
+img{border-style: none}
+.right {text-align:center}
+
+#global {width:1200px }
+
+#cabecera {background: white ; border: black 2px solid ;height:85px;width:1200}
+#logotipo {width:280px; float:left;margin:25px 2px 8px 20px}
+#cabecera {padding: 3px 1px 5px 0px; text-indent:15px}
+#publicidad {background-color: white  ; width:518px ; float:right;margin:25px 2px 8px 20px; front-size16px }
+#navegacion {background-color:#FFA07A; border: black 2px solid; height:20px;width:1200}
+#navegacion li {float:left; list-style:none; margin: 0px 20px 0px 20px }
+#navegacion ul { margin-left: 180px }
+#contenido {background-color:#48D1CC;border: 2px solid; width: 1200px}
+#contenido p{padding: 0px 10px 5px 10px; text-indent:15px}
+#menu       {background-color:#48D1CC ; width: 350px ; float:left ; 
+             text-align:center ; margin: 3px 10px 3px 3px }
+#menu li    {list-style:none ; margin: 4px 0px 4px 6px }
+#menu h1 {}
+
+#pie {background-color:white}
+#pie     {border-:  black 2px solid ; 
+          height: 35px;width:1000  }
+
+#pie li  {list-style: none ; font-size: 12px }
+
+#pieuno  {float:left ; width:150px }
+#piedos  {float:left ; width:498px }
+#pietres {float:left ; width:150px }
+#pie a         {color: blue; text-decoration:none ; display: block }
+#pie a:link    {}
+#pie a:visited {}
+#pie a:hover   {color:black ; text-decoration:underline ; background-color: yellow }
+#pie a:active  {color:black}
+a: {color: brown ; text-decoration:none ; display: block }
+a:link {}
+a:visited{}
+a:hover {color:black; text-decoration: underline;background-color:#B0E2FF}
+a:active {}
+
