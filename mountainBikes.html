@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="estilo-general.css" type="text/css" media="all">
+    <link rel="stylesheet" href="galleriffic-2.0/css/galleriffic-2.css" type="text/css" />
+    <title>Student's Bikes Home</title>
+    <script type="text/javascript" src="galleriffic-2.0/js/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="galleriffic-2.0/js/jquery.galleriffic.js"></script>
+
+    <!-- Optionally include jquery.history.js for history support -->
+    <script type="text/javascript" src="galleriffic-2.0/js/jquery.history.js"></script>
+    <script type="text/javascript" src="galleriffic-2.0/js/jquery.opacityrollover.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            // We only want these styles applied when javascript is enabled
+            $('div.navigation').css({ 'width': '300px', 'float': 'left' });
+            $('div.content').css('display', 'block');
+
+            // Initially set opacity on thumbs and add
+            // additional styling for hover effect on thumbs
+            var onMouseOutOpacity = 0.67;
+            $('#thumbs ul.thumbs li').opacityrollover({
+                mouseOutOpacity: onMouseOutOpacity,
+                mouseOverOpacity: 1.0,
+                fadeSpeed: 'fast',
+                exemptionSelector: '.selected'
+            });
+
+            // Initialize Advanced Galleriffic Gallery
+            var gallery = $('#thumbs').galleriffic({
+                delay: 2500,
+                numThumbs: 8,
+                preloadAhead: 10,
+                enableTopPager: true,
+                enableBottomPager: true,
+                maxPagesToShow: 7,
+                imageContainerSel: '#slideshow',
+                controlsContainerSel: '#controls',
+                captionContainerSel: '#caption',
+                loadingContainerSel: '#loading',
+                renderSSControls: true,
+                renderNavControls: true,
+                playLinkText: 'Play Slideshow',
+                pauseLinkText: 'Pause Slideshow',
+                prevLinkText: '&lsaquo; Previous Photo',
+                nextLinkText: 'Next Photo &rsaquo;',
+                nextPageLinkText: 'Next &rsaquo;',
+                prevPageLinkText: '&lsaquo; Prev',
+                enableHistory: false,
+                autoStart: false,
+                syncTransitions: true,
+                defaultTransitionDuration: 900,
+                onSlideChange: function (prevIndex, nextIndex) {
+                    // 'this' refers to the gallery, which is an extension of $('#thumbs')
+                    this.find('ul.thumbs').children()
+                        .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+                        .eq(nextIndex).fadeTo('fast', 1.0);
+                },
+                onPageTransitionOut: function (callback) {
+                    this.fadeTo('fast', 0.0, callback);
+                },
+                onPageTransitionIn: function () {
+                    this.fadeTo('fast', 1.0);
+                }
+            });
+        });
+		</script>
+</head>
+
+<body>
+    <div id="global">
+        <div id="cabecera">
+            <div id="logotipo">
+                <a href="index.html">
+                    <img src="objetos/logo2.jpg" class="max" style="float:left; height:100%" alt="logo">
+                </a>
+            </div>
+            <div id="centralImage">
+                <img alt="bicycles" src="objetos/mirando-bicicletas.jpg" style="height:100%" class="max" />
+            </div>
+            <div id="contactDetails">
+                <table style="float:right">
+                    <tbody>
+                        <tr>
+                            <td><img class="contactImage" src="objetos/address.jpg" /></td>
+                            <td>25a St. Leonards Road,<br /> Bournemouth,<br /> BH8 8QN</td>
+                        </tr>
+                        <tr>
+                            <td><img class="contactImage" src="objetos/telephone.jpg" /></td>
+                            <td>07966311602</td>
+                        </tr>
+                        <tr>
+                            <td><img class="contactImage" src="objetos/email.jpg" /></td>
+                            <td>hello@internet.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="navegacion">
+            <div class="nav">
+                <div><a href="index.html"><b>Home</b></a></div>
+                <div><a href="bikesforsale.html"><b>Bikes For Sale</b></a></div>
+                <div><a href="contact.html"><b>Contact Us</b></a></div>
+                <div><a href="galleryes.html"><b>Gallery</b></a></div>
+            </div>
+        </div>
+
+        <div class="navMain">
+            <div class="nav">
+                <div><a href="mountainBikes.html"><b>Mountain Bikes</b></a></div>
+                <div><a href="otherBikes.html"><b>Other Bikes</b></a></div>
+            </div>
+        </div>
+
+        <div id="gallery" class="content">
+					<div id="controls" class="controls"></div>
+					<div class="slideshow-container">
+						<div id="loading" class="loader"></div>
+						<div id="slideshow" class="slideshow"></div>
+					</div>
+					<div id="caption" class="caption-container"></div>
+				</div>
+				<div id="thumbs" class="navigation">
+					<ul class="thumbs noscript">
+
+						<li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+                        <li>
+							<a class="thumb" name="Kona Blast" href="objetos/bikes/mountain/s95.jpg" title="Kona Blast">
+								<img src="objetos/bikes/mountain/tn_s95.jpg" alt="Kona Blast" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Kona Blast</div>
+								<div class="image-desc">20" Frame<br />26" Wheel<br />21 Speed<br />Externa Berry</div>
+							</div>
+						</li>
+
+						<li>
+							<a class="thumb" name="Specialized Hard Rock" href="objetos/bikes/mountain/s99.jpg" title="Specialized Hard Rock">
+								<img src="objetos/bikes/mountain/tn_s99.jpg" alt="Specialized Hard Rock" />
+							</a>
+							<div class="caption">
+								<div class="image-title">Specialized Hard Rock</div>
+								<div class="image-desc">18" Frame<br />26" Wheel<br />24 Speed</div>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+<!--
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen90.htm">
+                        <img alt="s90 (112K)" src="objetos/s90.jpg" height="200" width="320" align="left" target="_blank" /></a>
+                </p>
+                <br>
+                OVER 50 DIFFERENT
+                    <br>
+                VARIETY<br>
+                OF<br>
+                2nd HAND BIKES<br>
+                IN STOCK<br>
+                <br>
+                </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen1.htm">
+                        <img alt="s1 (112K)" src="objetos/s1.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                CLAUD BUTLER 531 Fork Blandes Tubing<br>
+                23" Frame<br>
+                700c" Wheel<br>
+                14 Speed<br>
+                </p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen91.htm">
+                        <img alt="s91(112K)" src="objetos/s91.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                HALO<br>
+                12 1/2" Frame<br>
+                24" Wheel<br>
+                Single Speed<br>
+                Front Suspension </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen55.htm">
+                        <img alt="s55 (112K)" src="objetos/s55.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                BRAND NEW<br>
+                BARRACUDA YELLOW  STRIPE<br>
+                18" Frame<br>
+                26" Wheel<br>
+                4 Speed</p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen50.htm">
+                        <img alt="s50 (112K)" src="objetos/s50.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                VARIETY<br>
+                OF<br>
+                SHOPPERS<br>
+                </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen56.htm">
+                        <img alt="s56 (112K)" src="objetos/s56.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                NIGEL DEAN<br>
+                <br>
+                23" Frame<br>
+                700 Wheel<br>
+                Shimano RX100
+                    <br>
+                group set</p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen57.htm">
+                        <img alt="s57 (112K)" src="objetos/s57.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                <br>
+                <a href="imagen1.htm">Brand New</a>
+                <br>CINZIA - LIBERTY</br>
+                Town Bike<br>
+                17" Frame<br>
+                26" 1 3/8 Wheel<br>
+                6 Speed
+                    <br>
+                </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen9.htm">
+                        <img alt="s9 (112K)" src="objetos/s9.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                Brand New<br>BARRACUDA  CS100 </br>
+                <br>
+                19" Frame<br>
+                700" Wheel<br>
+                21 Speed
+                    <br>
+                </p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen96.htm">
+                        <img alt="s96 (112K)" src="objetos/s96.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                RALEIGH CHILTERN<br>
+                20" Frame<br>
+                26" 1 3/8 Wheel<br>
+                3 Speed<br>
+                Sturmey Archer
+                    <br>
+                <br>
+                </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen11.htm">
+                        <img alt="s11 (112K)" src="objetos/s11.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                GT PRO
+                    <br>
+                SERIES 24<br>
+                12" frame<br>
+                24" Wheel<br>
+                Single Speed
+                    <br>
+                Aluminum Frame<br>
+                </p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen12.htm">
+                        <img alt="s12 (112K)" src="objetos/s12.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                Brand New<br>
+                BARRACUDA INDIANA<br>
+                19" Frame<br>
+                700" Wheel<br>
+                21 Speed
+                    <br>
+                </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen93.htm">
+                        <img alt="s93 (112K)" src="objetos/s93.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                PEUGEOT<br>
+                <br>
+                21" Frame<br>
+                700C" Wheel<br>
+                Flip Flop Fixie
+                    <br>
+                Reynolds 553<br>
+                Cromo</p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen98.htm">
+                        <img alt="s98 (112K)" src="objetos/s98.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                RALEIGH<br>
+                PIONEER HYBRID<br>
+                18" Frame<br>
+                700" Wheel<br>
+                18" Speed<br>
+                </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen94.htm">
+                        <img alt="s94 (112K)" src="objetos/s94.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                DECATHLON<br>
+                700C" Wheel<br>
+                STI Lever<br>
+                </p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen16.htm">
+                        <img alt="s16 (112K)" src="objetos/s16.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                TRIUMPH-Classic<br>
+                22" Frame<br>
+                26" 1 3/8 Wheel<br>
+                3 Speed<br>
+                Sturmey Archer </p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen17.htm">
+                        <img alt="s17 (112K)" src="objetos/s17.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                BICKERTON PORTABLE<br>
+                3 Speed<br>
+                Sturmey Archer</p>
+            </div>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen95.htm">
+                        <img alt="s95 (112K)" src="objetos/s95.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                <br>
+                KONA BLAST<br>
+                20" Frame<br>
+                26" Wheel<br>
+                21 Speed<br>
+                Externa Berry
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen97.htm">
+                        <img alt="s97 (112K)" src="objetos/s97.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                GIANT GRANITE<br>
+                24" frame<br>
+                26" Wheel<br>
+                18 Speed
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <div id="foto1">
+            <p>
+                <a href="imagen100.htm">
+                    <img alt="s100 (112K)" src="objetos/s100.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            SPECIALIZED<br>
+            HARD ROCK
+                <br>
+            <br>
+            18" Frame<br>
+            26" Wheel<br>
+            24 Speed</p>
+        </div>
+        <div id="foto2">
+            <p>
+                <a href="imagen64.htm">
+                    <img alt="s73 (112K)" src="objetos/s73.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            RALEIGH PIONEER<br>
+            22" Frame<br>
+            700" Wheel<br>
+            10 Speed
+                <br>
+            </p>
+        </div>
+    </div>
+    <div id="contenido">
+        <div id="foto1">
+            <p>
+                <a href="imagen99.htm">
+                    <img alt="s99 (112K)" src="objetos/s99.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            MASSI 7005<br>
+            OVER SPEED<br>
+            <br>
+            19" Frame<br>
+            26" Wheel<br>
+            21 Speed<br>
+            </p>
+        </div>
+        <div id="foto2">
+            <p>
+                <a href="imagen23.htm">
+                    <img alt="s23 (112K)" src="objetos/s23.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            VARIETY
+                <br>
+            OF<br>
+            BMX
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen76.htm">
+                        <img alt="s81 (112K)" src="objetos/s81.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                <br>
+                TRIUMPH<br>
+                <br>
+                3 Speed<br>
+                Sturmey Archer<br>
+                20 1/3" Wheel<br>
+                <br>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen101.htm">
+                        <img alt="s101 (112K)" src="objetos/s101.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                BORTTECHIA<br>
+                <br>
+                700c" wheel
+                    <br>
+                22" Frame<br>
+                27 speed
+                    <br>
+                Aluminum Frame<br>
+                Front Suspension
+                    <br>
+                Shimano Deore</p>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <div id="foto1">
+            <p>
+                <a href="imagen102.htm">
+                    <img alt="s102 (112K)" src="objetos/s102.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            RALEIGH CROMO<br>
+            <br>
+            19" Frame<br>
+            26" Wheel<br>
+            21 Speed</p>
+        </div>
+        <div id="foto2">
+            <p>
+                <a href="imagen103.htm">
+                    <img alt="s103 (112K)" src="objetos/s103.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            HARBOUT S103<br>
+            19" Frame<br>
+            700" Wheel<br>
+            14 Speed
+                <br>
+            Complete Shimano 105<br>
+            Croup Set</p>
+        </div>
+    </div>
+    <div id="contenido">
+        <div id="foto1">
+            <p>
+                <a href="imagen104.htm">
+                    <img alt="s104 (112K)" src="objetos/s104.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            CARRERA
+                <br>
+            21" Frame<br>
+            700c" Wheel<br>
+            Flip Flop Fixie
+                <br>
+            Aluminum Frame</p>
+        </div>
+        <div id="foto2">
+            <p>
+                <a href="imagen106.htm">
+                    <img alt="s106 (112K)" src="objetos/s106.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            RALEIGH
+                <br>
+            21" Frame<br>
+            26" Wheel
+                <br>
+            21 Speed
+                <br>
+            Suspension Stem<br>
+            <br>
+        </div>
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen107.htm">
+                        <img alt="s107 (112K)" src="objetos/s107.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                <br>
+                RALEIGH<br>
+                PIONEER 140<br>
+                17" Frame<br>
+                700c" Wheel<br>
+                18 Speed<br>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen108.htm">
+                        <img alt="s108 (112K)" src="objetos/s108.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                RALEIGH<br>
+                PIONEER 140<br>
+                18" Frame<br>
+                700c" Wheel<br>
+                21 Speed<br>
+                Cromo
+            </div>
+            </p>
+        </div>
+    </div>
+    </div> 
+        <div id="contenido">
+            <div id="foto1">
+                <p>
+                    <a href="imagen92.htm">
+                        <img alt="s92 (112K)" src="objetos/s92.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                GARY FISHER<br>
+                <br>
+                20" Frame<br>
+                26" Wheel<br>
+                24 Speed</p>
+            </div>
+            <div id="foto2">
+                <p>
+                    <a href="imagen110.htm">
+                        <img alt="s110 (112K)" src="objetos/s110.jpg" height="200" width="320" align="left" /></a>
+                </p>
+                <br>
+                SHOPPER<br>
+                <br>
+                3 Speed
+                <br>
+                Sturmey Archer</p>
+            </div>
+        </div>
+    <div id="contenido">
+        <div id="foto1">
+            <p>
+                <a href="imagen79.htm">
+                    <img alt="s86 (112K)" src="objetos/s86.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            Brand New<br>
+            BARRACUDA
+                <br>
+            HYBRID<br>
+            <br>
+            21" Frame<br>
+            700" Wheel<br>
+            21 Speed<br>
+            </p>
+        </div>
+        <div id="foto2">
+            <p>
+                <a href="imagen89.htm">
+                    <img alt="s89 (112K)" src="objetos/s89.jpg" height="200" width="320" align="left" /></a>
+            </p>
+            <br>
+            <br>
+            <br>
+            ALL 
+                <br>
+            REPAIRING<br>
+            FACILITIES
+        </div>
+    -->
+    </div>
+    
+</body>
+</html>
